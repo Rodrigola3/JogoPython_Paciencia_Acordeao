@@ -1,7 +1,6 @@
-def extrai_valor(naipe):
-    valor= naipe[:-1]
+def extrai_valor(carta):
+    valor= carta[:-1]
     return valor
-    
-              
-carta= '10♥'
-print(extrai_valor(carta))
+
+# carta = 'A♦'
+# print(extrai_valor(carta))
