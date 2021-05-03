@@ -1,5 +1,5 @@
-def extrai_valor(carta):
-    valor= carta[:-1]
+def extrai_valor(baralho):
+    valor= baralho[:-1] 
     return valor
 
 # carta = 'A♦'
