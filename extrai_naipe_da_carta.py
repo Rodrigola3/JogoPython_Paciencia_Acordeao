@@ -1,5 +1,6 @@
 def extrai_naipe(carta):
-    return carta[-1]
+    naipe = carta[-1]
+    return naipe
 
 # carta = 'A♦'
 # print(extrai_naipe(carta))
