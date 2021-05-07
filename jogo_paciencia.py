@@ -1,5 +1,5 @@
 from funcoes_de_trabalho import *
-
+from time import sleep
 print(  '''
 
     Paciência Acordeão 
@@ -23,3 +23,12 @@ print(  '''
 
         '''
 )
+
+input()
+baralho= cria_baralho()
+
+while possui_movimentos_possiveis(baralho) == True:
+    for index, conteudo in enumerate(baralho):
+        sleep(0.1)
+        print(f'{index + 1}. {conteudo}')
+    escolha= int(input(f'Escolha uma carta (digite um número entre 1 e {len(baralho)}: '))
