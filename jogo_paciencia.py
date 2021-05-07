@@ -32,3 +32,18 @@ while possui_movimentos_possiveis(baralho) == True:
         sleep(0.1)
         print(f'{index + 1}. {conteudo}')
     escolha= int(input(f'Escolha uma carta (digite um número entre 1 e {len(baralho)}: '))
+
+    cont2= escolha - 1
+    if len(lista_movimentos_possiveis(baralho, cont2)) == 1:
+
+        if lista_movimentos_possiveis(baralho, cont2)[0] == 1:
+            cont3= cont2 - 1
+
+        if lista_movimentos_possiveis(baralho, cont2)[0] == 3:
+            cont3= cont2 - 3
+
+    if len(baralho) == 1:
+        print('FIM!')
+        break
+
+    baralho= empilha(baralho,cont2,cont3)
