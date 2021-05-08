@@ -29,7 +29,7 @@ baralho= cria_baralho()
 
 while possui_movimentos_possiveis(baralho) == True:
     for index, conteudo in enumerate(baralho):
-        sleep(0.1)
+        sleep(0.01)
         print(f'{index + 1}. {conteudo}')
     escolha= int(input(f'Escolha uma carta (digite um número entre 1 e {len(baralho)}: '))
 
@@ -40,6 +40,21 @@ while possui_movimentos_possiveis(baralho) == True:
             cont3= cont2 - 1
 
         if lista_movimentos_possiveis(baralho, cont2)[0] == 3:
+            cont3= cont2 - 3
+
+    if len(lista_movimentos_possiveis(baralho, cont2)) == 2:
+        print(f'Sobre qual carta você quer emplihar o {baralho[escolha - 1]}?')
+
+        print(f'1. {baralho[escolha - 2]}\n2. {baralho[escolha - 4]}') 
+
+        n= int()
+        while n != 1 or n != 2:
+            n= int(input(f'Digite o número de sua escolha (1-{len(baralho)}): '))
+            if n == 1 or n == 2:
+                break
+        if n == 1:
+            cont3= cont2 - 1
+        if n == 2:
             cont3= cont2 - 3
 
     if len(baralho) == 1:
