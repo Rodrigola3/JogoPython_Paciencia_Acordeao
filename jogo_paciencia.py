@@ -68,3 +68,6 @@ while possui_movimentos_possiveis(baralho) == True:
         break
 
     baralho= empilha(baralho,cont2,cont3)
+
+if possui_movimentos_possiveis(baralho) == False:
+    print('Perdeu o Jogo,. Não tem mais movimentos possíveis!')
