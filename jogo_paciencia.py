@@ -38,7 +38,7 @@ while possui_movimentos_possiveis(baralho) == True:
     if lista_movimentos_possiveis(baralho, cont2) == []:
         cont3= escolha-1
         baralho.append(baralho[cont3])
-        print(f'A carta {baralho[escolha-1]} não pode ser movida. Por favor, digite um número entre 1 {len(baralho) - 1}: ')
+        print(f'A carta {baralho[escolha-1]} não pode ser movida. Por favor, digite um número entre 1 e {len(baralho) - 1}: ')
         input('Clique ENTER para escolher uma nova carta')
     if len(lista_movimentos_possiveis(baralho, cont2)) == 1:
 
