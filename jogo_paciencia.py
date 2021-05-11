@@ -1,5 +1,8 @@
+# importando funções do jogo
 from funcoes_de_trabalho import *
 from time import sleep
+
+# Introdução e regras do Jogo
 print(  '''
 
     Paciência Acordeão 
@@ -24,12 +27,13 @@ print(  '''
         '''
 )
 
+# Algorito de Jogabilidade
 input()
 baralho= cria_baralho()
 
 while possui_movimentos_possiveis(baralho) == True:
     for index, conteudo in enumerate(baralho):
-        sleep(0.01)
+        sleep(0.0001)
         print(f'{index + 1}. {cores(conteudo)}')
     escolha= int(input(f'Escolha uma carta (digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho)}\033[m): '))
 
