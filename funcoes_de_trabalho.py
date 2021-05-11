@@ -42,6 +42,8 @@ def empilha(baralho, cont2,cont3):
         if extrai_naipe(baralho[cont2]) == extrai_naipe(baralho[cont3]) or  extrai_valor(baralho[cont2]) == extrai_valor(baralho[cont3]):
             baralho[cont3] = baralho[cont2]
             del baralho[cont2]
+    elif cont3 == 0:
+        return baralho
     return baralho
 
 def possui_movimentos_possiveis(baralho):

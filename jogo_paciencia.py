@@ -47,7 +47,8 @@ while possui_movimentos_possiveis(baralho) == True:
         cont3= escolha-1
         baralho.append(baralho[cont3])
         print(f'A carta {cores(baralho[escolha-1])} não pode ser movida. Por favor, digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho) - 1}\033[m): ')
-        input('Clique ENTER para escolher uma nova carta')
+        
+        input('Clique \033[1;32;40mENTER\033[m para escolher uma nova carta')
     if len(lista_movimentos_possiveis(baralho, cont2)) == 1:
 
         if lista_movimentos_possiveis(baralho, cont2)[0] == 1:
