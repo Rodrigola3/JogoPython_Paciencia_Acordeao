@@ -65,7 +65,7 @@ while possui_movimentos_possiveis(baralho) == True:
 
         n= int()
         while n != 1 or n != 2:
-            n= int(input(f'Digite o número de sua escolha (1-{len(baralho)}): '))
+            n= int(input(f'Digite o número de sua escolha (\033[1;33;40m1\033[m ou \033[1;33;40m2\033[m): '))
             if n == 1 or n == 2:
                 break
         if n == 1:
