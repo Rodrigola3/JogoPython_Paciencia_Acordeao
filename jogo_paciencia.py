@@ -30,15 +30,15 @@ baralho= cria_baralho()
 while possui_movimentos_possiveis(baralho) == True:
     for index, conteudo in enumerate(baralho):
         sleep(0.01)
-        print(f'{index + 1}. {conteudo}')
-    escolha= int(input(f'Escolha uma carta (digite um número entre 1 e {len(baralho)}: '))
+        print(f'{index + 1}. {cores(conteudo)}')
+    escolha= int(input(f'Escolha uma carta (digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho)}\033[m): '))
 
     cont2= escolha - 1
 
     if lista_movimentos_possiveis(baralho, cont2) == []:
         cont3= escolha-1
         baralho.append(baralho[cont3])
-        print(f'A carta {baralho[escolha-1]} não pode ser movida. Por favor, digite um número entre 1 e {len(baralho) - 1}: ')
+        print(f'A carta {cores(baralho[escolha-1])} não pode ser movida. Por favor, digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho) - 1}\033[m): ')
         input('Clique ENTER para escolher uma nova carta')
     if len(lista_movimentos_possiveis(baralho, cont2)) == 1:
 
@@ -49,9 +49,9 @@ while possui_movimentos_possiveis(baralho) == True:
             cont3= cont2 - 3
 
     if len(lista_movimentos_possiveis(baralho, cont2)) == 2:
-        print(f'Sobre qual carta você quer emplihar o {baralho[escolha - 1]}?')
+        print(f'Sobre qual carta você quer emplihar o {cores(baralho[escolha - 1])}?')
 
-        print(f'1. {baralho[escolha - 2]}\n2. {baralho[escolha - 4]}') 
+        print(f'1. {cores(baralho[escolha - 2])}\n2. {cores(baralho[escolha - 4])}') 
 
         n= int()
         while n != 1 or n != 2:
