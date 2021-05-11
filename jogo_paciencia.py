@@ -44,11 +44,12 @@ while possui_movimentos_possiveis(baralho) == True:
     cont2= escolha - 1
 
     if lista_movimentos_possiveis(baralho, cont2) == []:
-        cont3= escolha-1
-        baralho.append(baralho[cont3])
-        print(f'A carta {cores(baralho[escolha-1])} não pode ser movida. Por favor, digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho) - 1}\033[m): ')
+        cont3= 0
+        
+        print(f'A carta {cores(baralho[escolha-1])} não pode ser movida. Por favor, digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho)}\033[m): ')
         
         input('Clique \033[1;32;40mENTER\033[m para escolher uma nova carta')
+
     if len(lista_movimentos_possiveis(baralho, cont2)) == 1:
 
         if lista_movimentos_possiveis(baralho, cont2)[0] == 1:
@@ -72,11 +73,26 @@ while possui_movimentos_possiveis(baralho) == True:
         if n == 2:
             cont3= cont2 - 3
 
-    if len(baralho) == 1:
-        print('FIM!')
-        break
 
     baralho= empilha(baralho,cont2,cont3)
+
+    if len(baralho) == 1:
+        print('\033[1;32;40mParabêns, você venceu!\033[m')
+       
+        reiniciar= str(input('Deseja reiniciar e jogar novamente?.Digite \033[1;32;40mSIM\033[m ou \033[1;31;40mNÃO\033[m: ')).upper()[0]
+        if reiniciar == 'N':
+            print('\033[1;31;40mFim do Jogo!\033[m')
+            break  
+        elif reiniciar == 'S':
+            baralho= cria_baralho()
+
+        while reiniciar != 'S' or reiniciar != 'N':
+            if reiniciar == 'N':
+                print('\033[1;31;40mFim do Jogo!\033[m')
+                break
+            elif  reiniciar == 'S':
+                baralho= cria_baralho()
+                break
 
 if possui_movimentos_possiveis(baralho) == False:
     print('Perdeu o Jogo,. Não tem mais movimentos possíveis!')
