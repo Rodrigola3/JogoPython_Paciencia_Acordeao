@@ -1,4 +1,6 @@
+# importando biblioteca para o embaralhamento das cartas
 from random import shuffle 
+
 def cria_baralho():
     baralho= ['A♠', 'A♥', 'A♣', 'A♦','2♠', '2♥', '2♣', '2♦', '3♦','3♠', '3♥', '3♣', '4♦','4♠', '4♥', '4♣', '5♦','5♠', '5♥', '5♣', '6♦','6♠', '6♥', '6♣', '7♦','7♠', '7♥', '7♣', '8♦','8♠', '8♥', '8♣', '9♦','9♠', '9♥', '9♣', '10♦','10♠', '10♥', '10♣', 'J♦','J♠', 'J♥', 'J♣', 'Q♦','Q♠', 'Q♥', 'Q♣', 'K♦','K♠', 'K♥', 'K♣']
     shuffle(baralho)
@@ -52,6 +54,7 @@ def possui_movimentos_possiveis(baralho):
             cont+=1
     return False
 
+# defindo função para a implementação de cores no baralho
 def cores(naipe):
     if extrai_naipe(naipe) == '♠':
         cor= f'\033[1;34;40m{naipe}\033[0m'
