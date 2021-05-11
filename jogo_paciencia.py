@@ -94,5 +94,23 @@ while possui_movimentos_possiveis(baralho) == True:
                 baralho= cria_baralho()
                 break
 
-if possui_movimentos_possiveis(baralho) == False:
-    print('Perdeu o Jogo,. Não tem mais movimentos possíveis!')
+    if possui_movimentos_possiveis(baralho) == False:
+        for index, conteudo in enumerate(baralho):
+            print(f'{index + 1}. {cores(conteudo)}')
+        print('\033[1;31;40mPerdeu o Jogo. Não tem mais movimentos possíveis!\033[m')
+        
+        reiniciar= str(input('Deseja reiniciar e jogar novamente?.Digite \033[1;32;40mSIM\033[m ou \033[1;31;40mNÃO\033[m: ')).upper()[0]
+        if reiniciar == 'N':
+            print('\033[1;31;40mFim do Jogo!\033[m')
+            break  
+        elif  reiniciar == 'S':
+            baralho= cria_baralho()
+        
+        while reiniciar != 'S' or reiniciar != 'N':
+            if reiniciar == 'N':
+                print('\033[1;31;40mFim do Jogo!\033[m')
+                break
+
+            elif  reiniciar == 'S':
+                baralho= cria_baralho()
+                break
