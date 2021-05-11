@@ -37,6 +37,10 @@ while possui_movimentos_possiveis(baralho) == True:
         print(f'{index + 1}. {cores(conteudo)}')
     escolha= int(input(f'Escolha uma carta (digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho)}\033[m): '))
 
+    limite = range(1,len(baralho) + 1)
+    while escolha not in limite:
+        escolha= int(input(f'Posição inválida. Por favor digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho)}\033[m): '))
+
     cont2= escolha - 1
 
     if lista_movimentos_possiveis(baralho, cont2) == []:
