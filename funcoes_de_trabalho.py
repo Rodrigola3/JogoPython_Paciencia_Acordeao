@@ -34,17 +34,20 @@ def lista_movimentos_possiveis(baralho, cont):
 def empilha(baralho, cont2,cont3):
     if cont2 == 0:
         return baralho
-    if cont2 == 1 or cont2 == 2:
-        if extrai_naipe(baralho[cont2]) == extrai_naipe(baralho[cont3]) or  extrai_valor(baralho[cont2]) == extrai_valor(baralho[cont3]):
-            baralho[cont3] = baralho[cont2]
-            del baralho[cont2]
-    if cont2 >= 3:
-        if extrai_naipe(baralho[cont2]) == extrai_naipe(baralho[cont3]) or  extrai_valor(baralho[cont2]) == extrai_valor(baralho[cont3]):
-            baralho[cont3] = baralho[cont2]
-            del baralho[cont2]
-    elif cont3 == 0:
+    elif cont3 == -1:
         return baralho
+    elif cont2 == 1 or cont2 == 2:
+        if extrai_naipe(baralho[cont2]) == extrai_naipe(baralho[cont3]) or extrai_valor(baralho[cont2]) == extrai_valor(baralho[cont3]):
+            baralho[cont3] = baralho[cont2]
+            del baralho[cont2]
+
+    elif cont2 >= 3:
+        if extrai_naipe(baralho[cont2]) == extrai_naipe(baralho[cont3]) or extrai_valor(baralho[cont2]) == extrai_valor(baralho[cont3]):
+            baralho[cont3] = baralho[cont2]
+            del baralho[cont2]
+            
     return baralho
+
 
 def possui_movimentos_possiveis(baralho):
     cont= 0
