@@ -27,7 +27,7 @@ print(  '''
         '''
 )
 
-# Algorito de Jogabilidade
+# Algorito do jogo
 input()
 baralho= cria_baralho()
 
@@ -41,12 +41,13 @@ while possui_movimentos_possiveis(baralho) == True:
     while escolha not in limite:
         escolha= int(input(f'Posição inválida. Por favor digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho)}\033[m): '))
 
+    
     cont2= escolha - 1
 
     if lista_movimentos_possiveis(baralho, cont2) == []:
-        cont3= 0
+        cont3= -1
         
-        print(f'A carta {cores(baralho[escolha-1])} não pode ser movida. Por favor, digite um número entre \033[1;33;40m{1}\033[m e \033[1;33;40m{len(baralho)}\033[m): ')
+        print(f'A carta {cores(baralho[escolha-1])} não pode ser movida. Por favor, digite um número entre \033[1;33;40m{1}\033[m ou \033[1;33;40m\033[m): ')
         
         input('Clique \033[1;32;40mENTER\033[m para escolher uma nova carta')
 
@@ -65,17 +66,18 @@ while possui_movimentos_possiveis(baralho) == True:
 
         n= int()
         while n != 1 or n != 2:
-            n= int(input(f'Digite o número de sua escolha (\033[1;33;40m1\033[m ou \033[1;33;40m2\033[m): '))
+            n= int(input(f'Digite o número de sua escolha (1-{len(baralho)}): '))
             if n == 1 or n == 2:
                 break
         if n == 1:
             cont3= cont2 - 1
-        if n == 2:
+        elif n == 2:
             cont3= cont2 - 3
 
 
     baralho= empilha(baralho,cont2,cont3)
 
+# Caso que o jogador ganha a partida. Jogador pode iniciar um novo jogo sem ter que executar o programa novamente
     if len(baralho) == 1:
         print('\033[1;32;40mParabêns, você venceu!\033[m')
        
@@ -94,6 +96,7 @@ while possui_movimentos_possiveis(baralho) == True:
                 baralho= cria_baralho()
                 break
 
+# Caso que o jogador perca a partida. Jogador pode iniciar um novo jogo sem ter que executar o programa novamente
     if possui_movimentos_possiveis(baralho) == False:
         for index, conteudo in enumerate(baralho):
             print(f'{index + 1}. {cores(conteudo)}')
